@@ -1,4 +1,5 @@
 using CachingWithRepositoryPattern.Business.Services.Products;
+using CachingWithRepositoryPattern.DataAccess;
 using CachingWithRepositoryPattern.DataAccess.Context;
 using CachingWithRepositoryPattern.DataAccess.Repositories.Products;
 using Microsoft.EntityFrameworkCore;
@@ -6,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddCreateService();
 
 builder.Services.AddScoped<IProductRepository,ProductRepository>();
 builder.Services.AddScoped<IProductService,ProductService>();

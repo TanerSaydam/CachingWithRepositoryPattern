@@ -5,5 +5,5 @@ namespace CachingWithRepositoryPattern.Business.Services.Products;
 public interface IProductService
 {
     Task AddAsync(Product product);
-    IQueryable<Product> GetAll();
+    Task<IList<Product>> GetAll();
 }

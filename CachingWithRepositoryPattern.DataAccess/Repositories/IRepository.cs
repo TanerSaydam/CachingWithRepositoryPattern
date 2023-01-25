@@ -3,6 +3,6 @@
 public interface IRepository<T>
     where T : class
 {
-    Task AddAsync(T entity);
-    IQueryable<T> GetAll();
+    Task AddAsync(T entity);    
+    Task<IList<T>> GetAll();
 }

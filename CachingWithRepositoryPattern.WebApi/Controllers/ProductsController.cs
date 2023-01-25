@@ -17,9 +17,9 @@ namespace CachingWithRepositoryPattern.WebApi.Controllers
         }
 
         [HttpGet("[action]")]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {           
-            return Ok(_productService.GetAll());
+            return Ok(await _productService.GetAll());
         }
 
         [HttpPost("[action]")]

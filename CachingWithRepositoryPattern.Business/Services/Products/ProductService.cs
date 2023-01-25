@@ -17,8 +17,8 @@ public sealed class ProductService : IProductService
         await _productRepository.AddAsync(product);
     }
 
-    public IQueryable<Product> GetAll()
+    public async Task<IList<Product>> GetAll()
     {
-        return _productRepository.GetAll();
+        return await _productRepository.GetAll();
     }
 }
